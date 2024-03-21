@@ -6,7 +6,7 @@ const port = 3005;
 
 app.post('/api/data',(req,res) => {
   const userData = req.body;
-  console.log('Received data from client:', userData.name);
+  console.log('Received data from client:', userData);
   res.send('Data received successfully');
 });
 
