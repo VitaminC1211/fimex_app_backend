@@ -2,7 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3005;
 
-// Respond to GET requests with JSON data containing an image and text
+
+
+app.get('/api/data',(req,res) => {
+  const userData = req.body;
+  console.log('Received data from client:');
+  res.send('Data received successfully');
+});
+
 app.get('/', (req, res) => {
   const imageData = [
     {
