@@ -3,9 +3,10 @@ const app = express();
 const port = 3005;
 
 
+app.use(bodyParser.json());
 
 app.post('/api/data',(req,res) => {
-  const userData = JSON.parse(req.body);
+  const userData = req.body;
   console.log('Received data from client:', userData);
   res.send('Data received successfully');
 });
