@@ -4,9 +4,9 @@ const port = 3005;
 
 
 
-app.get('/api/data',(req,res) => {
+app.post('/api/data',(req,res) => {
   const userData = req.body;
-  console.log('Received data from client:');
+  console.log('Received data from client:', userData);
   res.send('Data received successfully');
 });
 
