@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.post('/user/register',(req,res) => {
   const userData = req.body;
-  console.log('Received data from client:', userData);
+  console.log('Received data from client:', userData.id);
   res.send('Data received successfully');
 });
 
