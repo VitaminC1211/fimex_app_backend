@@ -6,11 +6,13 @@ const port = 3005;
 
 app.use(bodyParser.json());
 
-app.post('/api/data',(req,res) => {
+app.post('/user/register',(req,res) => {
   const userData = req.body;
   console.log('Received data from client:', userData);
   res.send('Data received successfully');
 });
+
+
 
 app.get('/', (req, res) => {
   const imageData = [
