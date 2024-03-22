@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
 
 //Load User model
 const User = require('../../models/User');
@@ -42,11 +41,6 @@ router.post('/login', (req, res) => {
             }
             console.log(user)
             //Check for password
-            if (isMatch) {
-                res.send('2');
-            } else {
-                res.send('1');
-            }
             if (password === user.password) {
                 res.send('2'); // Passwords match
             } else {
