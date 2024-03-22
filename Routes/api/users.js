@@ -42,24 +42,22 @@ router.post('/login', (req, res) => {
             }
             console.log(user)
             //Check for password
-            bcrypt.compare(password, user.password)
-                .then(isMatch => {
-                    if (isMatch) {
-                        res.send('2');
-                    } else {
-                        res.send('1');
-                    }
-                    if (password === user.password) {
-                        res.send('2'); // Passwords match
-                    } else {
-                        res.send('1'); // Passwords do not match
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                    res.status(500).send('An error occurred');
-                });
+            if (isMatch) {
+                res.send('2');
+            } else {
+                res.send('1');
+            }
+            if (password === user.password) {
+                res.send('2'); // Passwords match
+            } else {
+                res.send('1'); // Passwords do not match
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).send('An error occurred');
         });
-})
+});
+
 
 module.exports = router;
