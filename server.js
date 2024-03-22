@@ -14,17 +14,21 @@ mongoose
 
 app.use(bodyParser.json());
 
-app.post('/user/register', (req, res) => {
-  const registerData = req.body;
-  console.log('Received data from client:', registerData);
-  res.send('Data received successfully');
-});
+//User Routes
+app.use('/api/users',users);
+app.use('api/services',services);
 
-app.post('/user/login', (req, res) => {
-  const loginData = req.body;
-  console.log('Received data from client:', loginData);
-  res.send('Data received successfully');
-});
+// app.post('/user/register', (req, res) => {
+//   const registerData = req.body;
+//   console.log('Received data from client:', registerData);
+//   res.send('Data received successfully');
+// });
+
+// app.post('/user/login', (req, res) => {
+//   const loginData = req.body;
+//   console.log('Received data from client:', loginData);
+//   res.send('Data received successfully');
+// });
 
 
 
