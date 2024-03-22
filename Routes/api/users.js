@@ -41,18 +41,16 @@ router.post('/login', (req, res) => {
     User.findOne({ email })
         //Check for user
         .then(user => {
-            if (!user) {
-                errors.email = 'User not found'
-                return res.status(404).json(errors);
+            if (!user) {                
+                return res.send("0");
             }
             //Check for password
             bcrypt.compare(password, user.password)
                 .then(isMatch=>{
                     if(isMatch){
-                        res.send('success!')
+                        res.send('2')
                     }else{
-                        errors.password = 'Password incorrect'
-                        res.status(400).json(errors);
+                        res.send("1");
                     }
                 });
         });
