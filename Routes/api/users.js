@@ -41,14 +41,18 @@ router.post('/login', (req, res) => {
                 return res.send("0");
             }
             console.log(user)
-                //Check for password
-                .compare(password, user.password)
+            //Check for password
+            compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
-                        res.send('2')
+                        res.send('2');
                     } else {
-                        res.send("1");
+                        res.send('1');
                     }
+                })
+                .catch(err => {
+                    console.error(err);
+                    res.status(500).send('An error occurred');
                 });
         });
 })
