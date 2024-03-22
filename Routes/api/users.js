@@ -34,6 +34,8 @@ router.post('/register', (req, res) => {
 
 //@router POST api/users/login
 router.post('/login', (req, res) => {
+
+    console.log(req)
     const email = req.body.email;
     const password = req.body.password;
 
