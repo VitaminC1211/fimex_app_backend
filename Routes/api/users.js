@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
             if (!user) {
                 return res.send("0");
             }
-            console.log(user)
+            console.log(user.password)
             //Check for password
             if (password == user.password) {
                 res.send('2'); // Passwords match
