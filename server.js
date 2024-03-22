@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 //User Routes
 app.use('/api/users',users);
-app.use('api/services',services);
+// app.use('api/services',services);
 
 app.get('/', (req, res) => {
   const imageData = [
