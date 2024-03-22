@@ -12,7 +12,7 @@ router.post('/register', (req, res) => {
     User.findOne({ email: req.body.email })
         .then(user => {
             if (user) {
-                return res.status(400).json({ email: 'This email already exists.' });
+                return console.log({ email: 'This email already exists.' });
             } else {
                 const newUser = new User({
                     name: req.body.name,
@@ -24,7 +24,7 @@ router.post('/register', (req, res) => {
                         if (err) throw err;
                         newUser.password = hash
                         newUser.save()
-                            .then(user => res.json(user))
+                            .then(user => console.log(user))
                             .catch(err => console.log(err));
                     })
                 })
