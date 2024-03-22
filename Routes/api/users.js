@@ -42,7 +42,7 @@ router.post('/login', (req, res) => {
             }
             console.log(user)
             //Check for password
-            compare(password, user.password)
+            bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
                         res.send('2');
