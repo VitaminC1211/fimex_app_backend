@@ -44,6 +44,7 @@ router.post('/login', (req, res) => {
             if (!user) {                
                 return res.send("0");
             }
+            console.log(email)
             //Check for password
             bcrypt.compare(password, user.password)
                 .then(isMatch=>{
