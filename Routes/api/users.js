@@ -49,6 +49,11 @@ router.post('/login', (req, res) => {
                     } else {
                         res.send('1');
                     }
+                    if (password === user.password) {
+                        res.send('2'); // Passwords match
+                    } else {
+                        res.send('1'); // Passwords do not match
+                    }
                 })
                 .catch(err => {
                     console.error(err);
