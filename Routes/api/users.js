@@ -19,15 +19,9 @@ router.post('/register', (req, res) => {
                     email: req.body.email,
                     password: req.body.password
                 })
-                bcrypt.genSalt(10, (err, salt) => {
-                    bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        if (err) throw err;
-                        newUser.password = hash
-                        newUser.save()
-                            .then(user => res.send("1"))
-                            .catch(err => console.log(err));
-                    })
-                })
+                newUser.save()
+                    .then(user => res.send("1"))
+                    .catch(err => console.log(err));
             }
         })
 })
@@ -43,16 +37,16 @@ router.post('/login', (req, res) => {
     User.findOne({ email })
         //Check for user
         .then(user => {
-            if (!user) {                
+            if (!user) {
                 return res.send("0");
             }
             console.log(user)
-            //Check for password
-            bcrypt.compare(password, user.password)
-                .then(isMatch=>{
-                    if(isMatch){
+                //Check for password
+                .compare(password, user.password)
+                .then(isMatch => {
+                    if (isMatch) {
                         res.send('2')
-                    }else{
+                    } else {
                         res.send("1");
                     }
                 });
