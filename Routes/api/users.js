@@ -8,7 +8,7 @@ const User = require('../../models/User');
 //@router POST api/users/register
 router.post('/register', (req, res) => {
     const registerData = req.body;
-    console.log('Received data from client:', registerData);
+    console.log('Received data from client:', registerData.email);
     // User.findOne({ email: req.body.email })
     //     .then(user => {
     //         if (user) {
