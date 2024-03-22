@@ -32,6 +32,7 @@ router.post('/login', (req, res) => {
     const password = req.body.password;
 
     console.log(typeof password)
+    console.log(password)
     //Find user by email
     User.findOne({ email })
         //Check for user
@@ -41,7 +42,7 @@ router.post('/login', (req, res) => {
             }
             console.log(typeof user.password)
             //Check for password
-            if (password.toString() === user.password) {
+            if (password == user.password) {
                 res.send('2'); // Passwords match
             } else {
                 res.send('1'); // Passwords do not match
