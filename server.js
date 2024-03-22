@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const port = 3005;
+const users = require('./Routes/api/users');
+const services = require('./Routes/api/services');
 
 const db = require('./config/keys').mongoURL;
 
