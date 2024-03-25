@@ -9,7 +9,7 @@ router.post('/createProduct',(req, res)=>{
     const newService = new Service({
         image: req.body.image,
         inner_image: req.body.inner_image,
-        images: req.body.product.inner_image.images
+        images: req.body.inner_image.images
     })
     console.log(req.body)
     res.send(req.body)
