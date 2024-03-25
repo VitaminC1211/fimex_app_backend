@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 //Create Schema
 const ServiceSchema = new Schema({
     id:{
-      type: number
+      type: Number
     },
     image:{
         type: String
@@ -13,7 +13,7 @@ const ServiceSchema = new Schema({
     inner_image:[
         {
             id:{
-                type: number
+                type: Number
             },
             images:{
                 type: String
@@ -23,21 +23,21 @@ const ServiceSchema = new Schema({
             },
             inner_info:[{
                 id:{
-                    type:number
+                    type:Number
                 },
                 text:{
                     type: String
                 },
                 phone_inner:[{
                     id:{
-                        type: number
+                        type: Number
                     },
                     phone_type:{
                         type: String
                     },
                     country_price:[{
                         id:{
-                            type: number
+                            type: Number
                         },
                         price:{
                             type: String
