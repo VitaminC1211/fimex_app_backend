@@ -13,7 +13,7 @@ router.post('/createProduct', (req, res) => {
     // })
     req.body.forEach((item) => {
         console.log(item.inner_image);
-        item.forEach((inner_item)=>{
+        item.inner_image.forEach((inner_item)=>{
             console.log(inner_item.inner_info)
         })
     });
