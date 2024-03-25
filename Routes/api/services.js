@@ -7,12 +7,12 @@ const Service = require('../../models/Service');
 //@router POST api/services/createProduct
 router.post('/createProduct', (req, res) => {
 
-    const image = "";
-    const images = "";
-    const description = "";
-    const text = "";
-    const phone_type = "";
-    const prices = "";
+    let image;
+    let images;
+    let description;
+    let text;
+    let phone_type;
+    let prices;
 
 
     req.body.forEach((item) => {
