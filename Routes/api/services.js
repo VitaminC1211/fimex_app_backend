@@ -7,14 +7,14 @@ const Service = require('../../models/Service');
 //@router POST api/services/createProduct
 router.post('/createProduct', (req, res) => {
 
-    let image;
+    let img;
     let images;
     let description;
     let text;
     let phone_type;
     let prices;
 
-    image = req.body.image;
+    img = req.body.image
     req.body.forEach((item) => {
         //values for inner image
         item.inner_image.forEach((inner_item) => {
@@ -36,7 +36,7 @@ router.post('/createProduct', (req, res) => {
     });
 
     const newService = new Service({
-        image: image,
+        image: img,
         inner_image: [
             {
                 images: images,
