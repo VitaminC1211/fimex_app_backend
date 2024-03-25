@@ -37,16 +37,33 @@ router.post('/createProduct', (req, res) => {
 
     const newService = new Service({
         image: image,
-        images: images,
-        description: description,
-        text: text,
-        phone_type: phone_type,
-        price: prices,
-    })
-
+        inner_image: [
+            {
+                images: images,
+                description: description,
+                inner_info: [
+                    {
+                        text: text,
+                        phone_inner: [
+                            {
+                                phone_type: phone_type,
+                                country_price: [
+                                    {
+                                        price: prices
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    });
+    // Save the new Service instance to the database
     newService.save()
-        .then(user => res.send(req.body))
-        .catch(err => console.log(err));
+        .then(service => res.json(service))
+        .catch(err => console.error(err));
+
 })
 
 //@router POST api/services/getAll
