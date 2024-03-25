@@ -22,13 +22,10 @@ router.post('/createProduct', (req, res) => {
             
     //     })
     // })
-    
-    console.log(req.body.forEach((item)=>{
-        item.inner_image.images
-    }),)
+
     
     req.body.forEach((item) => {
-        console.log(item.inner_image);
+        console.log(item.inner_image.images);
         item.inner_image.forEach((inner_item)=>{
             console.log(inner_item.inner_info)
             inner_item.inner_info.forEach((inner_phone)=>{
