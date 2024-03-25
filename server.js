@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const port = 3005;
 const users = require('./Routes/api/users');
 const services = require('./Routes/api/services');
-
+const cors = require("cors");
 const db = require('./config/keys').mongoURL;
 
 //Connect to DB
@@ -14,6 +14,7 @@ mongoose
   .then(() => console.log('fimex DB connected'))
   .catch(err => console.log(err));
 
+app.use(cors({}));
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
