@@ -3,11 +3,17 @@ const Schema = mongoose.Schema;
 
 //Create Schema
 const ServiceSchema = new Schema({
+    id:{
+      type: String  
+    },
     image:{
         type: String
     },
     inner_image:[
         {
+            id:{
+                type: String
+            },
             images:{
                 type: String
             },
@@ -15,6 +21,9 @@ const ServiceSchema = new Schema({
                 type: String
             },
             inner_info:[{
+                id:{
+                    type:String
+                },
                 text:{
                     type: String
                 },
@@ -26,6 +35,9 @@ const ServiceSchema = new Schema({
                         type: String
                     },
                     country_price:[{
+                        id:{
+                            type: String
+                        },
                         price:{
                             type: String
                         }
