@@ -6,18 +6,18 @@ const Service = require('../../models/Service');
 
 //@router POST api/services/createProduct
 router.get('/createProduct',(req, res)=>{
-//     const newService = new Service({
-//         image: req.body.image,
-//         inner_image: req.body.inner_image,
-//         images: req.body.inner_image.images
-//     })
-//     console.log(req.body)
-//     newService.save()
-//         .then(user => res.send("1"))
-//         .catch(err => console.log(err));
-// })
-res.json({msg:"working"})
+    const newService = new Service({
+        image: req.body.image,
+        inner_image: req.body.inner_image,
+        images: req.body.inner_image.images
+    })
+    console.log(req.body)
+    // newService.save()
+    //     .then(user => res.send("1"))
+    //     .catch(err => console.log(err));
 })
+// res.json({msg:"working"})
+// })
 
 
 module.exports = router;
