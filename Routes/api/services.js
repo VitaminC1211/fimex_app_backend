@@ -28,7 +28,7 @@ router.post('/createProduct', (req, res) => {
                     phone_type = countryindex.phone_type
                     //values for country_price
                     countryindex.country_price.forEach((price) => {
-                        prices = price.text
+                        prices = price.price
                     })
                 })
             })
