@@ -34,7 +34,7 @@ router.post('/createProduct', (req, res) => {
             })
         })
     });
-
+    console.log(img);
     const newService = new Service({
         image: img,
         inner_image: [
