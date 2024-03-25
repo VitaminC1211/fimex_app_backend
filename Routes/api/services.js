@@ -45,7 +45,7 @@ router.post('/createProduct', (req, res) => {
     })
 
     newService.save()
-        .then(user => res.send(req.body))
+        .then(user => res.send(Service.image))
         .catch(err => console.log(err));
 })
 
