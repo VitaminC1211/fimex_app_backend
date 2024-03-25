@@ -11,15 +11,20 @@ const db = require('./config/keys').mongoURL;
 //Connect to DB
 mongoose
   .connect(db)
-  .then(()=>console.log('fimex DB connected'))
+  .then(() => console.log('fimex DB connected'))
   .catch(err => console.log(err));
 
-app.use(bodyParser.urlencoded({extended:false}))
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 //User Routes
-app.use('/api/users',users);
-app.use('/api/services',services);
+app.use('/api/users', users);
+app.use('/api/services', services);
 
 app.get('/', (req, res) => {
   const imageData = [
