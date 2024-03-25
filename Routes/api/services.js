@@ -51,14 +51,14 @@ router.post('/createProduct', (req, res) => {
 
 //@router POST api/services/getAll
 router.post('/getAll', (req, res) => {
-    Service.find({}, (err, data) => {
-        if (err) {
-          console.error(err);
-        } else {
-          console.log(data);
-          res.json(data)
-        }
-      });
+    Service.find({})
+  .then(data => {
+    console.log(data)
+    res.json(data);
+  })
+  .catch(err => {
+    console.error(err);
+  });
 })
 
 module.exports = router;
