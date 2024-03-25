@@ -18,7 +18,6 @@ router.post('/createProduct', (req, res) => {
     let innerInfoId;
     let innerPhoneId;
     let countryId;
-
     
     req.body.forEach((item) => {
         imgid = item.id

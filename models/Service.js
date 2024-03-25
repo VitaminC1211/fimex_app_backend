@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
+const { number } = require('webflow-api/core/schemas');
 const Schema = mongoose.Schema;
 
 //Create Schema
 const ServiceSchema = new Schema({
     id:{
-      type: String  
+      type: number
     },
     image:{
         type: String
@@ -12,7 +13,7 @@ const ServiceSchema = new Schema({
     inner_image:[
         {
             id:{
-                type: String
+                type: number
             },
             images:{
                 type: String
@@ -22,21 +23,21 @@ const ServiceSchema = new Schema({
             },
             inner_info:[{
                 id:{
-                    type:String
+                    type:number
                 },
                 text:{
                     type: String
                 },
                 phone_inner:[{
                     id:{
-                        type: String
+                        type: number
                     },
                     phone_type:{
                         type: String
                     },
                     country_price:[{
                         id:{
-                            type: String
+                            type: number
                         },
                         price:{
                             type: String
