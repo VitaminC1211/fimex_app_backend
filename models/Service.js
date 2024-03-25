@@ -26,7 +26,7 @@ const ServiceSchema = new Schema({
                         type: String
                     },
                     country_price:[{
-                        text:{
+                        price:{
                             type: String
                         }
                     }]
