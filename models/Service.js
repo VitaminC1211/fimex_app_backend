@@ -8,7 +8,7 @@ const ServiceSchema = new Schema({
     },
     inner_image:[
         {
-            image:{
+            images:{
                 type: String
             },
             description:{
