@@ -5,14 +5,16 @@ const router = express.Router();
 const Service = require('../../models/Service');
 
 //@router POST api/services/createProduct
-router.post('/createProduct',(req, res)=>{
+router.post('/createProduct', (req, res) => {
     // const newService = new Service({
     //     image: req.body.image,
     //     inner_image: req.body.inner_image,
     //     images: req.body.inner_image.images
     // })
-    console.log(req.body)
-    res.send(req.body)
+    req.body.forEach((item) => {
+        console.log(item.inner_image);
+    });
+    res.send(req.body.inner_image)
     // newService.save()
     //     .then(user => res.send("1"))
     //     .catch(err => console.log(err));
