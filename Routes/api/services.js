@@ -34,7 +34,6 @@ router.post('/createProduct', (req, res) => {
             })
         })
     });
-    res.send(req.body.inner_info)
 
     const newService = new Service({
         image: image,
@@ -46,7 +45,7 @@ router.post('/createProduct', (req, res) => {
     })
 
     newService.save()
-        .then(user => res.send("1"))
+        .then(user => res.send(req.body))
         .catch(err => console.log(err));
 })
 
