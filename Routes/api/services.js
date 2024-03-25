@@ -9,14 +9,30 @@ router.post('/createProduct', (req, res) => {
     // const newService = new Service({
     //     image: req.body.image,
     //     inner_image: req.body.inner_image,
-    //     images: req.body.inner_image.images
+    //     images: req.body.forEach((item)=>{
+    //         item.inner_image.images
+    //     }),
+    //     description:req.body.forEach((item)=>{
+    //         item.inner_image.description
+    //     }),
+    //     inner_info: req.body.forEach((item)=>{
+    //         item.inner_image.inner_info
+    //     }),
+    //     text: req.body.forEach(()=>{
+            
+    //     })
     // })
+    
+    console.log(req.body.forEach((item)=>{
+        item.inner_image.images
+    }),)
+    
     req.body.forEach((item) => {
-        // console.log(item.inner_image);
+        console.log(item.inner_image);
         item.inner_image.forEach((inner_item)=>{
-            // console.log(inner_item.inner_info)
+            console.log(inner_item.inner_info)
             inner_item.inner_info.forEach((inner_phone)=>{
-                // console.log(inner_phone.phone)
+                console.log(inner_phone.phone)
                 inner_phone.phone.forEach((countryindex)=>{
                     console.log(countryindex.country_price)
                 })
