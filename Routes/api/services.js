@@ -49,5 +49,16 @@ router.post('/createProduct', (req, res) => {
         .catch(err => console.log(err));
 })
 
+//@router POST api/services/getAll
+router.post('/getAll', (req, res) => {
+    Service.find({}, (err, data) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(data);
+          res.json(data)
+        }
+      });
+})
 
 module.exports = router;
