@@ -15,25 +15,29 @@ router.post('/createProduct', (req, res) => {
     let prices;
 
     image = req.body.image;
-    req.body.forEach((item) => {
-        //values for inner image
-        item.inner_image.forEach((inner_item) => {
-            images = inner_item.images
-            description = inner_item.description
-            //valuse for inner info
-            inner_item.inner_info.forEach((inner_phone) => {
-                text = inner_phone.text
-                //values for phone inner
-                inner_phone.phone.forEach((countryindex) => {
-                    phone_type = countryindex.phone_type
-                    //values for country_price
-                    countryindex.country_price.forEach((price) => {
-                        prices = price.text
+    for (let key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            req.body[key].forEach((item) => {
+                //values for inner image
+                item.inner_image.forEach((inner_item) => {
+                    images = inner_item.images
+                    description = inner_item.description
+                    //valuse for inner info
+                    inner_item.inner_info.forEach((inner_phone) => {
+                        text = inner_phone.text
+                        //values for phone inner
+                        inner_phone.phone.forEach((countryindex) => {
+                            phone_type = countryindex.phone_type
+                            //values for country_price
+                            countryindex.country_price.forEach((price) => {
+                                prices = price.text
+                            })
+                        })
                     })
                 })
             })
-        })
-    });
+        }
+    };
 
     const newService = new Service({
         image: image,
@@ -54,7 +58,7 @@ router.post('/getAll', (req, res) => {
     Service.find({})
         .then(data => {
             console.log(data)
-            res.json(data.map);
+            res.json(data);
         })
         .catch(err => {
             console.error(err);
