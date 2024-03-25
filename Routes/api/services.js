@@ -11,7 +11,7 @@ router.post('/createProduct',(req, res)=>{
     //     inner_image: req.body.inner_image,
     //     images: req.body.inner_image.images
     // })
-    console.log(req.body)
+    console.log(req.body.inner_image.imaegs)
     res.send(req.body)
     // newService.save()
     //     .then(user => res.send("1"))
