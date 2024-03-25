@@ -12,6 +12,7 @@ router.get('/createProduct',(req, res)=>{
         // images: req.body.inner_image.images
     })
     console.log(req.body)
+    res.send(req.body)
     // newService.save()
     //     .then(user => res.send("1"))
     //     .catch(err => console.log(err));
