@@ -5,7 +5,7 @@ const router = express.Router();
 const Service = require('../../models/Service');
 
 //@router POST api/services/createProduct
-router.post('/createProduct',(req, res)=>{
+router.get('/createProduct',(req, res)=>{
 //     const newService = new Service({
 //         image: req.body.image,
 //         inner_image: req.body.inner_image,
