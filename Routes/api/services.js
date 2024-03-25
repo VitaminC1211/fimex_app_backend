@@ -14,8 +14,9 @@ router.post('/createProduct', (req, res) => {
     let phone_type;
     let prices;
 
-    img = req.body.image
+    
     req.body.forEach((item) => {
+        img = item.image
         //values for inner image
         item.inner_image.forEach((inner_item) => {
             images = inner_item.images
