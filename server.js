@@ -14,6 +14,7 @@ mongoose
   .then(()=>console.log('fimex DB connected'))
   .catch(err => console.log(err));
 
+app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
 
 //User Routes
