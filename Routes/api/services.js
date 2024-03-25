@@ -12,8 +12,10 @@ router.post('/createProduct', (req, res) => {
     //     images: req.body.inner_image.images
     // })
     req.body.forEach((item) => {
-        console.log(item.inner_info);
-        
+        console.log(item.inner_image);
+        item.forEach((inner_item)=>{
+            console.log(inner_item.inner_info)
+        })
     });
     res.send(req.body.inner_info)
     // newService.save()
