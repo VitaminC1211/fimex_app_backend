@@ -41,7 +41,7 @@ router.post('/createProduct', (req, res) => {
         description: description,
         text: text,
         phone_type: phone_type,
-        price:prices,
+        price: prices,
     })
 
     newService.save()
@@ -52,13 +52,13 @@ router.post('/createProduct', (req, res) => {
 //@router POST api/services/getAll
 router.post('/getAll', (req, res) => {
     Service.find({})
-  .then(data => {
-    console.log(data)
-    res.json(data);
-  })
-  .catch(err => {
-    console.error(err);
-  });
+        .then(data => {
+            console.log(data)
+            res.json(data.map);
+        })
+        .catch(err => {
+            console.error(err);
+        });
 })
 
 module.exports = router;
