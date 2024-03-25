@@ -25,7 +25,10 @@ router.post('/createProduct', (req, res) => {
 
     
     req.body.forEach((item) => {
-        console.log(item.inner_image.images);
+        console.log(item.inner_image);
+        item.inner_image.forEach(index=>{
+            console.log(index.images)
+        })
         item.inner_image.forEach((inner_item)=>{
             console.log(inner_item.inner_info)
             inner_item.inner_info.forEach((inner_phone)=>{
