@@ -15,6 +15,12 @@ router.post('/createProduct', (req, res) => {
         console.log(item.inner_image);
         item.inner_image.forEach((inner_item)=>{
             console.log(inner_item.inner_info)
+            inner_item.inner_info.forEach((inner_phone)=>{
+                console.log(inner_phone.phone)
+                inner_phone.phone.forEach((country_price)=>{
+                    console.log(country_price.country_price)
+                })
+            })
         })
     });
     res.send(req.body.inner_info)
