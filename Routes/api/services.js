@@ -17,8 +17,8 @@ router.post('/createProduct', (req, res) => {
             console.log(inner_item.inner_info)
             inner_item.inner_info.forEach((inner_phone)=>{
                 console.log(inner_phone.phone)
-                inner_phone.phone.forEach((country_price)=>{
-                    console.log(country_price.country_price)
+                inner_phone.phone.forEach((countryindex)=>{
+                    console.log(countryindex.country_price)
                 })
             })
         })
