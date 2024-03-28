@@ -30,7 +30,7 @@ router.post('/createProduct', (req, res) => {
         });
 
         newService.save()
-            .then(product => console.log(product.phone_inner))
+            .then(product => console.log(product))
             .catch(err => console.error(err));
     });
     res.send('Products saved successfully');
