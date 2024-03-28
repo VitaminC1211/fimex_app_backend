@@ -17,7 +17,7 @@ router.post('/createProduct', (req, res) => {
                 inner_info: innerImage.inner_info.map((info) => ({
                     id: info.id,
                     text: info.text,
-                    phone_inner: info.phone.map((phone_inner) => ({
+                    phone_inner: info.phone_inner.map((phone_inner) => ({
                         id: phone_inner.id,
                         phone_type: phone_inner.phone_type,
                         country_price: phone_inner.country_price.map((country_price) => ({
