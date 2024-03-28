@@ -40,7 +40,6 @@ router.post('/createProduct', (req, res) => {
 router.post('/getAll', (req, res) => {
     Service.find({})
         .then(data => {
-            console.log(data)
             res.json(data);
         })
         .catch(err => {
